@@ -9,7 +9,14 @@ void main() {
       home: Scaffold(
           body: Container(
               decoration: const BoxDecoration(
-                  gradient:
-                      LinearGradient(colors: [Colors.white24, Colors.brown])),
-              child: const Center(child: Text('Roll the dice'))))));
+                  gradient: LinearGradient(
+                      colors: [Colors.green, Colors.brown],
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft)),
+              child: const Center(
+                  child: Text('Roll the dice',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24)))))));
 }
