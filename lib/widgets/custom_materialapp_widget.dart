@@ -1,12 +1,17 @@
+import 'package:dice/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 
-class CustomWidget extends StatelessWidget {
+/// Custom MaterialApp widget that applies a top-right to bottom-left gradient, with the
+/// CustomText widget styling in place.
+class CustomMaterialAppWidget extends StatelessWidget {
   // this is needed for all widgets; params in curly braces are named arguments;
   // here we pass the Widget key to the StatelessWidget parent instance field "key"
-  const CustomWidget({super.key});
+  const CustomMaterialAppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // pass the MaterialApp widget https://api.flutter.dev/flutter/material/MaterialApp-class.html
+
     // nest widgets, with MaterialApp being the parent widget;
     // also demonstrated are named arguments (as opposed to position arguments found in C based languages)
     return MaterialApp(
@@ -17,11 +22,6 @@ class CustomWidget extends StatelessWidget {
                         colors: [Colors.green, Colors.brown],
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft)),
-                child: const Center(
-                    child: Text('Roll the dice',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24))))));
+                child: const Center(child: CustomTextWidget()))));
   }
 }
