@@ -22,6 +22,6 @@ class CustomMaterialAppWidget extends StatelessWidget {
                         colors: [Colors.green, Colors.brown],
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft)),
-                child: const Center(child: CustomTextWidget()))));
+                child: Center(child: CustomTextWidget()))));
   }
 }
