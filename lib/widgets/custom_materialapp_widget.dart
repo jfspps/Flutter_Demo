@@ -1,9 +1,11 @@
-import 'package:dice/widgets/custom_text_widget.dart';
+import 'package:dice/widgets/custom_image_widget.dart';
 import 'package:flutter/material.dart';
 
 // "const" is a compile-time constant and must be initialised here;
 const double defaultSize = 24;
 const String message = "Roll the dice";
+
+const String defaultImageName = "dice-1.png";
 
 /// Custom MaterialApp widget that applies a top-right to bottom-left gradient, with the
 /// CustomText widget styling in place.
@@ -27,6 +29,6 @@ class CustomMaterialAppWidget extends StatelessWidget {
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft)),
                 child: const Center(
-                    child: CustomTextWidget(defaultSize, message)))));
+                    child: CustomImageWidget(defaultImageName)))));
   }
 }
