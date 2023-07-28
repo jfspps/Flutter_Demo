@@ -13,6 +13,9 @@ class CustomImageWidget extends StatelessWidget {
     final relPath = rootPath + fileName;
 
     // width in pixels
-    return Image.asset(relPath, width: 200);
+    return Image.asset(
+      relPath,
+      width: 200,
+    );
   }
 }

@@ -11,10 +11,13 @@ class CustomTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(txtMessage,
-        style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: defaultFontSize));
+    return Text(
+      txtMessage,
+      style: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontSize: defaultFontSize,
+      ),
+    );
   }
 }
