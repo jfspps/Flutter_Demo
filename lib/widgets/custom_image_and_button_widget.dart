@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'custom_image_widget.dart';
+import 'package:dice/widgets/custom_image_widget.dart';
+import 'dart:math';
 
 // "const" is a compile-time constant and must be initialised here;
 const double defaultFontSize = 30;
 const String message = "Roll the dice";
-
 const double defaultPadding = 20;
+
+final randomNumber = Random();
 
 /// Defines a coupled Image and TextButton widget. This is established between
 /// the Image filename and the TextButton rollDice method.
@@ -25,9 +27,11 @@ class _CustomImageAndButtonWidgetState
 
   // define rollDice here, and call this widget's build() again to update the UI
   void rollDice() {
+    var diceRoll = randomNumber.nextInt(6) + 1;
+
     // pass an anonymous function to setState (part of State generic)
     setState(() {
-      imageFilename = "dice-2.png";
+      imageFilename = "dice-$diceRoll.png";
     });
   }
 
