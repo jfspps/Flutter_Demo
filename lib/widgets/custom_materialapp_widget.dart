@@ -1,27 +1,12 @@
-import 'package:dice/widgets/custom_image_widget.dart';
+import 'package:dice/widgets/custom_image_and_button_widget.dart';
 import 'package:flutter/material.dart';
-
-// "const" is a compile-time constant and must be initialised here;
-const double defaultFontSize = 30;
-const String message = "Roll the dice";
-
-const double defaultPadding = 20;
 
 /// Custom MaterialApp widget that applies a top-right to bottom-left gradient, with the
 /// CustomText widget styling in place.
 class CustomMaterialAppWidget extends StatelessWidget {
   // this is needed for all widgets; params in curly braces are named arguments;
   // here we pass the Widget key to the StatelessWidget parent instance field "key"
-  CustomMaterialAppWidget({super.key});
-
-  String imageFilename = "dice-1.png";
-
-  // define function here, in preference to using anonymous functions (similar to
-  // lambda functions)
-  void rollDice() {
-    // this does nothing
-    imageFilename = "dice-2.png";
-  }
+  const CustomMaterialAppWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,26 +27,8 @@ class CustomMaterialAppWidget extends StatelessWidget {
               end: Alignment.bottomLeft,
             ),
           ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CustomImageWidget(imageFilename),
-                TextButton(
-                  onPressed: rollDice,
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.only(
-                      top: defaultPadding,
-                    ),
-                    textStyle: const TextStyle(
-                      fontSize: defaultFontSize,
-                    ),
-                  ),
-                  child: const Text(message),
-                )
-              ],
-            ),
+          child: const Center(
+            child: CustomImageAndButtonWidget(),
           ),
         ),
       ),
